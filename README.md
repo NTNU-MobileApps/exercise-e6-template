@@ -1,6 +1,8 @@
-# Exercise E6
+# Exercise E6 - input form with validation
 
-Exercise E6 - Form with validation
+Repository for exercise E6.
+Course [IDATA2503 Mobile applications](https://www.ntnu.edu/studies/courses/IDATA2503)
+at [NTNU](https://ntnu.edu), campus [Aalesund](https://www.ntnu.edu/alesund).
 
 ## Intention
 
@@ -75,8 +77,34 @@ Now implement the following logic for validation:
         3. It must not be longer than 12 characters
         4. Examples of valid usernames: `chuck`, `Chuck`, `cucumber`, `PewDiePie`, `cat`
         5. Examples of invalid usernames: `chuck12`, `nun-chuck`, `Pære`, `me`, empty string.
-    2. If any of the error mentioned above are detected, the "Submit form" button is disabled
-    3. The "Submit form" button is enabled again when all errors in the form are fixed and all input
+    2. Conditions for the email field to be considered valid:
+        1. It must not be empty
+        2. It must be a "valid email address". There are several rules (and different regular
+           expressions available online). Find a solution for checking whether a string is a valid
+           email address!
+        3. Examples of valid email addresses: `microsoft@chuck.com`, `the.big_chuck@big.mac.com`
+           , `chuck+ducktape@apple.com`
+        4. Examples of invalid email addresses: `@thechuck`, `@thechuck.com`, `duck@`
+    3. Password is considered valid if it contains the following:
+        1. at least 6 characters
+        2. no more than 20 characters (in total)
+        3. at least one uppercase letter
+        4. at least one lowercase letter
+        5. at least one digit
+    4. If any of the error mentioned above are detected (any of the fields contains an invalid
+       value), the "Submit form" button is disabled
+    5. The "Submit form" button is enabled again when all errors in the form are fixed and all input
        fields contain a valid value
+    6. If the username is invalid, the `TextField` is marked with red and message "invalid username"
+       is displayed below the field. (Hint: use `errorText` for the `TextField`, don't create a new
+       widget for the error)
+    7. In a similar manner - if the email is invalid, show an error "invalid email format"
+    8. If the password is invalid, show error "password must be 6-20 characters and contain
+       uppercase and lowercase letters, and a digit".
+3. If the "Submit form" button is pressed and all the fields are valid:
+    1. Hide the "Submit form" button
+    2. Disable all input fields - the user should not be able to change any text within them
+    3. Display a `CircularProgressIndicator` in the place where the button was located
 
-To be continued...
+P.S. This may sound like a lot of logic, but all the code you write should be re-usable in your
+project ;)
