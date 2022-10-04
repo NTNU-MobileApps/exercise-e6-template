@@ -31,8 +31,15 @@ Your task is to implement a form where the user can input username, email and pa
 a "Submit" button. If an input contains an incorrect value, you must mark that input field and
 display an appropriate error message.
 
-Implement the input form according to the following specification (which will be checked in the
-tests):
+The implementation consists of two parts:
+
+1. Creating the UI layout
+2. Setting up validation logic
+
+### Creating the layout
+
+Create the elements for the input form according to the following specification (which will be
+checked in the tests):
 
 1. Add an input field for the username: a `TextField` widget (note: later we will talk
    about `TextFormField` widget as well, but don't use it for now as this may conflict with unit
@@ -61,6 +68,8 @@ When you are done with the UI, it should look something along these lines:
 
 Note: there will be no comparison with a golden image in this exercise, therefore specific fonts,
 paddings and color's don't matter in this case.
+
+### Validation logic
 
 Now implement the following logic for validation:
 
@@ -107,3 +116,6 @@ Now implement the following logic for validation:
 
 P.S. This may sound like a lot of logic, but all the code you write should be re-usable in your
 project ;)
+
+P.P.S. For now you don't need to worry about separating the logic from the UI widgets , we will do
+that a bit later.
