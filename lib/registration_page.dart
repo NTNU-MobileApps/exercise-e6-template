@@ -17,15 +17,20 @@ class _RegistrationPageState extends State<RegistrationPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Card(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: const [
-              Text("Place the inputs and the button somewhere here?"),
-              Text("Feel free to modify the widget hierarchy!"),
-            ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text("Place the inputs and the button somewhere here?"),
+                  Text("Feel free to modify the widget hierarchy!"),
+                ],
+              ),
+            ),
           ),
         ),
       ),

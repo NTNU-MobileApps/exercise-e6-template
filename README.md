@@ -39,13 +39,12 @@ tests):
    tests). Implement the following properties for this TextField:
     1. Set the `key` property for it to `username_input`. We have not used the `key` property
        before. In general - it is like an `id` used for web elements - an identifier that uniquely
-       identifies an element in the UI (an instance of a widget).
+       identifies an element in the UI (an instance of a widget). Hint: in the constructor you can
+       set the key as follows: `key: Key("username_input")`
     2. Set the label to `Username`.
-    3. Set the hint inside the input field to `Chuck`.
 2. Add an input field for the email: a `TextField` widget with the following properties:
     1. The `key` property having value `email_input`.
     2. Label `Email`
-    3. Hint `microsoft@chuck.com`
     4. Make it an email-input field. I.e., when the user will enter the value here, she should see
        the keyboard layout made for entering email addresses.
 3. Add an input field for the password with the following properties:
