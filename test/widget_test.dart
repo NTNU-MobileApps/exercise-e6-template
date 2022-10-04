@@ -21,25 +21,45 @@ void main() {
     expect(findPasswordInput(), findsOneWidget);
   });
 
+  testWidgets('Submission button is present', (WidgetTester tester) async {
+    await tester.pumpWidget(const MyApp());
+    final Finder button = findSubmissionButton();
+    expect(button, findsOneWidget);
+  });
+
   testWidgets('Username has correct label', (WidgetTester tester) async {
-    expectInputLabel(findUsernameInput(), "Username", tester);
+    await tester.pumpWidget(const MyApp());
+    expectInputLabel(
+        findTextField("username_input", tester), "Username", tester);
   });
 
   testWidgets('Email has correct label', (WidgetTester tester) async {
-    expectInputLabel(findEmailInput(), "Email", tester);
+    await tester.pumpWidget(const MyApp());
+    expectInputLabel(findTextField("email_input", tester), "Email", tester);
   });
 
   testWidgets('Password has correct label', (WidgetTester tester) async {
-    expectInputLabel(findPasswordInput(), "Password", tester);
+    await tester.pumpWidget(const MyApp());
+    expectInputLabel(
+        findTextField("password_input", tester), "Password", tester);
+  });
+
+  testWidgets('Email has correct keyboard', (WidgetTester tester) async {
+    await tester.pumpWidget(const MyApp());
+    final TextField emailInput = findTextField("email_input", tester);
+    expect(emailInput.keyboardType, equals(TextInputType.emailAddress));
+  });
+
+  testWidgets('Password has hidden characters', (WidgetTester tester) async {
+    await tester.pumpWidget(const MyApp());
+    final TextField passwordInput = findTextField("password_input", tester);
+    expect(passwordInput.obscureText, isTrue);
   });
 }
 
 /// Expect that the given text input field has a provided label
 void expectInputLabel(
-    Finder inputFinder, String expectedLabel, WidgetTester tester) async {
-  await tester.pumpWidget(const MyApp());
-  expect(inputFinder, findsOneWidget);
-  TextField input = tester.element(inputFinder).widget as TextField;
+    TextField input, String expectedLabel, WidgetTester tester) async {
   expect(input.decoration, isNotNull);
 
   // There are two ways to configure the label, make sure both are accepted!
