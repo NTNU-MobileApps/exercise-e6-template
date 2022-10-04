@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "name": "Username input field is present",
+      "setup": "",
+      "run": "flutter test --name='Username input-field is present'",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Email input field is present",
+      "setup": "",
+      "run": "flutter test --name='Email input-field is present'",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Password input field is present",
+      "setup": "",
+      "run": "flutter test --name='Password input-field is present'",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
