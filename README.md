@@ -57,7 +57,7 @@ tests):
 
 When you are done with the UI, it should look something along these lines:
 
-[//]: # (TODO - image)
+<img width="360" src="screenshot.png"/>
 
 Note: there will be no comparison with a golden image in this exercise, therefore specific fonts,
 paddings and color's don't matter in this case.
