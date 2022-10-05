@@ -27,6 +27,15 @@ void main() {
     expect(button, findsOneWidget);
   });
 
+  testWidgets('Submission button has correct text',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(const MyApp());
+    final Finder button = findSubmissionButton();
+    final text =
+        find.descendant(of: button, matching: find.text("Submit form"));
+    expect(text, findsOneWidget);
+  });
+
   testWidgets('Username has correct label', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
     expectInputLabel(
