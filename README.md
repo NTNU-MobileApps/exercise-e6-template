@@ -14,7 +14,7 @@ display of error messages.
 Create a clone of the template repository within GitHub Classroom. Use the invitation link you got
 from Blackboard! Get the automated tests passing.
 
-**To pass the assignment approved you need to get at least TODO points.**
+**To pass the assignment approved you need to get at least 180 points.**
 
 ## Testing
 
