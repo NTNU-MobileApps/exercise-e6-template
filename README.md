@@ -105,14 +105,17 @@ Now implement the following logic for validation:
        fields contain a valid value
     6. If the username is invalid, the `TextField` is marked with red and message "invalid username"
        is displayed below the field. (Hint: use `errorText` for the `TextField`, don't create a new
-       widget for the error)
+       widget for the error). See an example below.
     7. In a similar manner - if the email is invalid, show an error "invalid email format"
-    8. If the password is invalid, show error "password must be 6-20 characters and contain
-       uppercase and lowercase letters, and a digit".
+    8. If the password is invalid, show error "6-20 chars, uppercase, lowercase, digits".
 3. If the "Submit form" button is pressed and all the fields are valid:
     1. Hide the "Submit form" button
     2. Disable all input fields - the user should not be able to change any text within them
     3. Display a `CircularProgressIndicator` in the place where the button was located
+
+Here is an example of a form showing error messages for the fields:
+<img width="360" src="errors.png"/>
+
 
 P.S. This may sound like a lot of logic, but all the code you write should be re-usable in your
 project ;)

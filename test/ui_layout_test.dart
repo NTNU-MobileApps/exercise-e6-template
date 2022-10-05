@@ -39,44 +39,29 @@ void main() {
   testWidgets('Username has correct label', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
     expectInputLabel(
-        findTextField("username_input", tester), "Username", tester);
+        findTextField(usernameInputKey, tester), "Username", tester);
   });
 
   testWidgets('Email has correct label', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
-    expectInputLabel(findTextField("email_input", tester), "Email", tester);
+    expectInputLabel(findTextField(emailInputKey, tester), "Email", tester);
   });
 
   testWidgets('Password has correct label', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
     expectInputLabel(
-        findTextField("password_input", tester), "Password", tester);
+        findTextField(passwordInputKey, tester), "Password", tester);
   });
 
   testWidgets('Email has correct keyboard', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
-    final TextField emailInput = findTextField("email_input", tester);
+    final TextField emailInput = findTextField(emailInputKey, tester);
     expect(emailInput.keyboardType, equals(TextInputType.emailAddress));
   });
 
   testWidgets('Password has hidden characters', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
-    final TextField passwordInput = findTextField("password_input", tester);
+    final TextField passwordInput = findTextField(passwordInputKey, tester);
     expect(passwordInput.obscureText, isTrue);
   });
-}
-
-/// Expect that the given text input field has a provided label
-void expectInputLabel(
-    TextField input, String expectedLabel, WidgetTester tester) async {
-  expect(input.decoration, isNotNull);
-
-  // There are two ways to configure the label, make sure both are accepted!
-  if (input.decoration!.labelText != null) {
-    expect(input.decoration!.labelText, equals(expectedLabel));
-  } else {
-    expect(input.decoration!.label, isNotNull);
-    final Text labelWidget = input.decoration!.label as Text;
-    expect(labelWidget.data, equals(expectedLabel));
-  }
 }
